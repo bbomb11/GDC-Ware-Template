@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://h5r176fgsrwb"]
+
+[ext_resource type="Texture2D" uid="uid://clpnqj8s13rf4" path="res://ExampleScene1/GameDevClubPixelLogo1000.png" id="1_5lu0w"]
+[ext_resource type="Script" uid="uid://bsrp8lx41qrv" path="res://ExampleScene1/example_game.gd" id="1_6u3r5"]
+
+[sub_resource type="Gradient" id="Gradient_f0o2c"]
+colors = PackedColorArray(0.25490198, 0.105882354, 0.3372549, 1, 0.25490198, 0.105882354, 0.3372549, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8481y"]
+gradient = SubResource("Gradient_f0o2c")
+
+[sub_resource type="Gradient" id="Gradient_8481y"]
+colors = PackedColorArray(0, 0, 0, 1, 0.25490198, 0.105882354, 0.3372549, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_plsbs"]
+gradient = SubResource("Gradient_8481y")
+
+[node name="Example Game" type="Node2D" unique_id=2009915323]
+script = ExtResource("1_6u3r5")
+timeSet = 1
+popUpVerb = "Shrink"
+
+[node name="GradienM" type="Sprite2D" parent="." unique_id=895109349]
+scale = Vector2(2.6514077, 671.5)
+texture = SubResource("GradientTexture1D_8481y")
+
+[node name="GradienL" type="Sprite2D" parent="." unique_id=722204917]
+position = Vector2(-550, 0)
+scale = Vector2(1.6914063, 671.5)
+texture = SubResource("GradientTexture1D_plsbs")
+
+[node name="GradienR" type="Sprite2D" parent="." unique_id=1510774014]
+position = Vector2(550, 0)
+rotation = -3.1415925
+scale = Vector2(1.6914063, 671.5)
+texture = SubResource("GradientTexture1D_plsbs")
+
+[node name="Game Design Club" type="Sprite2D" parent="." unique_id=999290669]
+scale = Vector2(2, 2)
+texture = ExtResource("1_5lu0w")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1222767470]
