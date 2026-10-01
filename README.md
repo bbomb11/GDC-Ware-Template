@@ -22,13 +22,16 @@ As we are hoping to load the finished project into our arcade machine, we ask th
 ### Lives
 Each game will be created with a fail / win condition in mind, such that if a game is failed, a life will be lost in the larger system. Games can either be made to win after the timer has elapsed, making them a survival type game, or they can be made to win once another condition has been met, losing upon the timer elapsing. 
 
+
 # Template
 To use the template, there are 3 major components to keep in mind:
+
 
 ## Godot (opening the template)
 Games are to be created in godot, version 4.7.2 or similar. To open the template with godot, simply download the code as a zip, unzip the folder, and import the gdc-ware folder as a project into godot through the import button in the top-left of the launcher.
 
 The project should automatically open to the Scene_Tester node in 3D view. To Properly view the scene, you’ll need to switch to the 2D scene view.
+
 
 ## Scene Tester (our system)
 This is the main scene where you can test your microgame with the inputs that our main system will input, as well as making sure your outputs are read correctly. This scene lets you make sure everything is functioning correctly to ensure a smooth transition into the full project when the time comes.
@@ -65,6 +68,7 @@ When these signals are cast, the system will register that the game is won or lo
 
 The Scene Tester will take all of these variables into account to spawn your game, play the popup animation of your desired verb, and detect if you won or lost the game based on your given state. If the panel is red / failed, a life would be lost, if the panel is green / won, a life would not be lost.
 
+
 ## Your game
 There are a couple of requirements in order to simplify the transition from your game to our system. 
 
@@ -87,6 +91,7 @@ This is done so that inputs work consistently with our arcade machine. During te
 ### Audio
 If you plan on creating music, we request for all music tracks to be made at 120bpm so that the audio in the game can mesh smoothly. Keep the length of game you’re creating in mind when making your tracks. As well as custom-made tracks, we’ve created a few template tracks for you that you can use as well. Template tracks can be found here: https://drive.google.com/drive/folders/1lbATJEJH0sr-Wd0SRs7zpqwQglI4B7Wq?usp=drive_link
 Currently, audio is sped-up using godot’s AudioServer.playback_speed_scale.
+
 
 # Out
 Feel free to reach out to any executive on our discord server if you have any questions or need any clarification. 
