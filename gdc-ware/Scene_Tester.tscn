@@ -1,0 +1,283 @@
+[gd_scene format=3 uid="uid://bhpkehtidm116"]
+
+[ext_resource type="Script" uid="uid://cx4vq8d8oplv4" path="res://scene_tester.gd" id="1_1f2gb"]
+[ext_resource type="PackedScene" uid="uid://h5r176fgsrwb" path="res://ExampleScene1/Example_Game.tscn" id="2_mrss6"]
+[ext_resource type="FontFile" uid="uid://cd44phsn44wor" path="res://ShadowsIntoLightTwo-Regular.ttf" id="3_lhttn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1j6f5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0x60"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plsbs"]
+bg_color = Color(0.42352942, 0.3764706, 0.68235296, 1)
+
+[sub_resource type="Animation" id="Animation_bbjpl"]
+resource_name = "CloseGame"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_d24je"]
+resource_name = "Open"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_i6h60"]
+resource_name = "OpenGame"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_n5n8p"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3pafg"]
+_data = {
+&"CloseGame": SubResource("Animation_bbjpl"),
+&"Open": SubResource("Animation_d24je"),
+&"OpenGame": SubResource("Animation_i6h60"),
+&"RESET": SubResource("Animation_n5n8p")
+}
+
+[sub_resource type="Animation" id="Animation_yh58q"]
+resource_name = "PopUp"
+length = 6.0333333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0, 175, 80, 0, 0, 0.36666673, 22, 75, 0, 0, 0.16666667, -13.166667, 1, -0.3666668, 66, 0.25, 0),
+"times": PackedFloat32Array(0.0333333, 2.1, 4.1666665, 6)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xglvd"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bbjpl"]
+_data = {
+&"PopUp": SubResource("Animation_yh58q"),
+&"RESET": SubResource("Animation_xglvd")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1j6f5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8b1t"]
+bg_color = Color(0.0885599, 0.08855992, 0.08855986, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xfbl"]
+bg_color = Color(0.060530342, 0.060530365, 0.060530297, 1)
+
+[node name="Scene_Tester" type="Control" unique_id=223911011]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1f2gb")
+gameScene = ExtResource("2_mrss6")
+setDifficulty = 1
+setSpeed = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1498116111]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=825212409]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1j6f5")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PanelContainer" unique_id=1178228642]
+custom_minimum_size = Vector2(500, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_lhttn")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/background = SubResource("StyleBoxFlat_u0x60")
+theme_override_styles/fill = SubResource("StyleBoxFlat_plsbs")
+max_value = 5.0
+value = 4.48
+allow_greater = true
+show_percentage = false
+
+[node name="Cover" type="ColorRect" parent="CanvasLayer" unique_id=1365786245]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.39215687, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Cover" unique_id=2125397240]
+libraries/ = SubResource("AnimationLibrary_3pafg")
+
+[node name="PopUp" type="Label" parent="CanvasLayer" unique_id=386202768]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -44.0
+offset_right = 150.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lhttn")
+theme_override_font_sizes/font_size = 1
+text = "Attack!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PopUp" unique_id=436243769]
+libraries/ = SubResource("AnimationLibrary_bbjpl")
+speed_scale = 3.146
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1115770950]
+offset_right = 137.0
+offset_bottom = 271.0
+
+[node name="WinonEndState" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1109666545]
+layout_mode = 2
+text = "winOnEnd: "
+
+[node name="WinState" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=592519936]
+layout_mode = 2
+text = "won: flag"
+
+[node name="DifficultyLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1010600526]
+layout_mode = 2
+text = "difficulty: easy"
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=2030468489]
+layout_mode = 2
+text = "speed: 1"
+
+[node name="TimeRemaining" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1943267370]
+layout_mode = 2
+text = "time-remaining: "
+
+[node name="StartButton" type="Button" parent="CanvasLayer" unique_id=1166712288]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -68.5
+offset_right = 113.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lhttn")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_1j6f5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e8b1t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5xfbl")
+text = "Start"
+
+[node name="GameTimer" type="Timer" parent="." unique_id=623752182]
+one_shot = true
+
+[node name="AnimTimer" type="Timer" parent="." unique_id=2059443633]
+one_shot = true
+
+[connection signal="animation_finished" from="CanvasLayer/Cover/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="AnimTimer" to="." method="_on_anim_timer_timeout"]
