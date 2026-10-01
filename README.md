@@ -3,7 +3,7 @@ Godot template for the University of Calgary's Game Design Club's GDC-ware proje
 
 Hello there cool game designer, this is the 2026/2027 edition of the hopefully annual project, where we all make a bunch of microgames together, and compile them all into one great game showcase!
 
- #Concept:
+### Concept:
 This project is a collaborative game development project where many members of the UCalgary Game Design Club community and beyond will create very short (2-8s) games, which will all be compiled by the GDC team to create a project together. 
 
 This project is inspired by the WarioWare game series, so look into that if you’re wondering what the finished project will be similar to.
